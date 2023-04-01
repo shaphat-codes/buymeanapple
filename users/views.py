@@ -33,11 +33,11 @@ def UserPageListView(request):
 
 
 @api_view(['PUT'])
-def UserPageCreateView(request, pk):
+def UserPageCreateView(request, user):
 
-    page = UserPage.objects.get(id=pk)
+    page = UserPage.objects.filter(user=user).first()
     serializer = UserPageSerializer(instance=page, data=request.data, many=False, partial="True")
-    parser_classes = (MultiPartParser, FormParser)
+    
 
     if serializer.is_valid():
                 

@@ -12,7 +12,7 @@ urlpatterns = [
     path('support/payment-create/', views.PaymentCreateView, name = "buy-link"),
     path('support/payment-list/', views.PaymentGetView, name = "payment-list"),
 
-    path('support/user-payment-list/', views.UserPaymentGetView, name = "user-payment-list"),
+    path('support/user-payment-list/<str:user>', views.UserPaymentGetView, name = "user-payment-list"),
     
 ]
 

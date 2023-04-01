@@ -16,7 +16,7 @@ urlpatterns = [
     path('withdrawal/', views.WithdrawalView, name = "withdrawal"),
     path('withdrawal-list/', views.WithdrawalListView, name = "withdrawal-list"),
     path('page-list/', views.UserPageListView, name = 'page-list'),
-    path('page-create/<str:pk>', views.UserPageCreateView, name = 'page-create'),
+    path('page-create/<str:user>', views.UserPageCreateView, name = 'page-create'),
     path('<slug:slug>/', views.UserPageView, name = "user-page"),
      
 

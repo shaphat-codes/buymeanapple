@@ -31,9 +31,8 @@ def PaymentGetView(request):
 
     
 @api_view(['GET'])
-def UserPaymentGetView(request):
-    permission_classes = [IsAuthenticated]
-    user = request.user
+def UserPaymentGetView(request,user):
+    
     payments  = Payment.objects.filter(user=user)
     serializer = PaymentSerializer(payments, many=True)
     return Response(serializer.data)
